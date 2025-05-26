@@ -12,3 +12,4 @@ C:\Users\shakh\Music\.Net\NewApp\obj\Debug\net9.0\refint\NewApp.dll
 C:\Users\shakh\Music\.Net\NewApp\obj\Debug\net9.0\NewApp.pdb
 C:\Users\shakh\Music\.Net\NewApp\obj\Debug\net9.0\NewApp.genruntimeconfig.cache
 C:\Users\shakh\Music\.Net\NewApp\obj\Debug\net9.0\ref\NewApp.dll
+C:\Users\shakh\Music\.Net\NewApp\obj\Debug\net9.0\NewApp.sourcelink.json

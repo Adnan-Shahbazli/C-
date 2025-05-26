@@ -38,11 +38,11 @@ for (int i = 0; i < 10; i++)
     }
     System.Console.Write("Enter your answer(A/B/C/D):");
         string yourAnswer = Console.ReadLine();
-        if (Convert.ToString(char.ToUpper(Convert.ToChar(yourAnswer))) == questionAnswer[i, 5])
+        if (yourAnswer.ToUpper() == questionAnswer[i, 5])
         {
 
         }
-        else if (Convert.ToString(char.ToUpper(Convert.ToChar(yourAnswer))) != questionAnswer[i, 5] && aSecondChance[0] != i && aSecondChance[1] != i)
+        else if (yourAnswer.ToUpper() != questionAnswer[i, 5] && aSecondChance[0] != i && aSecondChance[1] != i)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("Game Over!");
