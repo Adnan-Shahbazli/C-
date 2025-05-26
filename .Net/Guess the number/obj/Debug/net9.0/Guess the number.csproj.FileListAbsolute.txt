@@ -1,0 +1,14 @@
+C:\Users\shakh\Music\.Net\Guess the number\bin\Debug\net9.0\Guess the number.exe
+C:\Users\shakh\Music\.Net\Guess the number\bin\Debug\net9.0\Guess the number.deps.json
+C:\Users\shakh\Music\.Net\Guess the number\bin\Debug\net9.0\Guess the number.runtimeconfig.json
+C:\Users\shakh\Music\.Net\Guess the number\bin\Debug\net9.0\Guess the number.dll
+C:\Users\shakh\Music\.Net\Guess the number\bin\Debug\net9.0\Guess the number.pdb
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.AssemblyInfoInputs.cache
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.AssemblyInfo.cs
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.csproj.CoreCompileInputs.cache
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.dll
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\refint\Guess the number.dll
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.pdb
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\Guess the number.genruntimeconfig.cache
+C:\Users\shakh\Music\.Net\Guess the number\obj\Debug\net9.0\ref\Guess the number.dll
