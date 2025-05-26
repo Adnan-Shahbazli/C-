@@ -12,3 +12,4 @@ C:\Users\shakh\Music\.Net\whoWantsToBecomeAMillionaire\obj\Debug\net9.0\refint\w
 C:\Users\shakh\Music\.Net\whoWantsToBecomeAMillionaire\obj\Debug\net9.0\whoWantsToBecomeAMillionaire.pdb
 C:\Users\shakh\Music\.Net\whoWantsToBecomeAMillionaire\obj\Debug\net9.0\whoWantsToBecomeAMillionaire.genruntimeconfig.cache
 C:\Users\shakh\Music\.Net\whoWantsToBecomeAMillionaire\obj\Debug\net9.0\ref\whoWantsToBecomeAMillionaire.dll
+C:\Users\shakh\Music\.Net\whoWantsToBecomeAMillionaire\obj\Debug\net9.0\whoWantsToBecomeAMillionaire.sourcelink.json

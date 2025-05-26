@@ -1,8 +1,14 @@
-﻿int RightAnswer(string answer)
+﻿void RandomASecondChance(int[] aSecondChance)
 {
-    char letter = Convert.ToChar(answer);
-    int answerInt = Convert.ToInt32(letter) - 64;
-    return answerInt;
+    Random random = new Random();
+    int firstRandomNumber = random.Next(10);
+    aSecondChance[0] = firstRandomNumber;
+    int secondRandomNumber = random.Next(10);
+    while (secondRandomNumber == firstRandomNumber)
+    {
+        secondRandomNumber = random.Next(10);
+    }
+    aSecondChance[1] = secondRandomNumber;
 }
 
 string[,] questionAnswer = new string[10, 6]
@@ -18,12 +24,31 @@ string[,] questionAnswer = new string[10, 6]
     {"How many continents are there on Earth?","A:Five","B:Six","C:Seven","D:Eight","C"},
     {"Who painted the Mona Lisa?","A:Pablo Picasso","B:Vincent van Gogh","C:Leonardo da Vinci","D:Michelangelo","c"}
 };
+int[] aSecondChance = new int[2] { 0, 0 };
+RandomASecondChance(aSecondChance);
+System.Console.WriteLine(aSecondChance[0]);
+System.Console.WriteLine(aSecondChance[1]);
 
 for (int i = 0; i < 10; i++)
 {
     for (int j = 0; j < 5; j++)
     {
         System.Console.WriteLine(questionAnswer[i, j]);
+        
     }
+    System.Console.Write("Enter your answer(A/B/C/D):");
+        string yourAnswer = Console.ReadLine();
+        if (Convert.ToString(char.ToUpper(Convert.ToChar(yourAnswer))) == questionAnswer[i, 5])
+        {
+
+        }
+        else if (Convert.ToString(char.ToUpper(Convert.ToChar(yourAnswer))) != questionAnswer[i, 5] && aSecondChance[0] != i && aSecondChance[1] != i)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            System.Console.WriteLine("Game Over!");
+            Console.ResetColor();
+            break;
+        }
+        
     System.Console.WriteLine();
 }
