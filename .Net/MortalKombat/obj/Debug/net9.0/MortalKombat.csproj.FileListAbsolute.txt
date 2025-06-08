@@ -1,0 +1,15 @@
+C:\Users\User\Music\C#\.Net\MortalKombat\bin\Debug\net9.0\MortalKombat.exe
+C:\Users\User\Music\C#\.Net\MortalKombat\bin\Debug\net9.0\MortalKombat.deps.json
+C:\Users\User\Music\C#\.Net\MortalKombat\bin\Debug\net9.0\MortalKombat.runtimeconfig.json
+C:\Users\User\Music\C#\.Net\MortalKombat\bin\Debug\net9.0\MortalKombat.dll
+C:\Users\User\Music\C#\.Net\MortalKombat\bin\Debug\net9.0\MortalKombat.pdb
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.AssemblyInfoInputs.cache
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.AssemblyInfo.cs
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.csproj.CoreCompileInputs.cache
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.sourcelink.json
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.dll
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\refint\MortalKombat.dll
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.pdb
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\MortalKombat.genruntimeconfig.cache
+C:\Users\User\Music\C#\.Net\MortalKombat\obj\Debug\net9.0\ref\MortalKombat.dll
