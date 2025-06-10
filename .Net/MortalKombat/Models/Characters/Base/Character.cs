@@ -1,6 +1,6 @@
 
 
-namespace MortalKombat.Models.Character.Base
+namespace MortalKombat.Models.Characters.Base
 {
     public abstract class Character
     {
@@ -83,7 +83,7 @@ namespace MortalKombat.Models.Character.Base
             {
                 return xRayPercent;
             }
-            protected set
+            set
             {
                 xRayPercent = value;
             }
@@ -111,30 +111,42 @@ namespace MortalKombat.Models.Character.Base
             {
                 return fatalityCombination;
             }
-            protected set
+            set
             {
                 fatalityCombination = value;
             }
         }
-        protected virtual void CharacterAttack()
+        public virtual void CharacterAttackLeft()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have Attack");
             Console.ResetColor();
         }
-        protected virtual void CharacterDefence()
+        public virtual void CharacterAttackRight()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            System.Console.WriteLine("You don't have Attack");
+            Console.ResetColor();
+        }
+        public virtual void CharacterDefenceLeft()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have Defence");
             Console.ResetColor();
         }
-        protected virtual void CharacterDamage()
+        public virtual void CharacterDefenceRight()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            System.Console.WriteLine("You don't have Defence");
+            Console.ResetColor();
+        }
+        public virtual void CharacterDamage()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have Damage");
             Console.ResetColor();
         }
-        protected void Damage(int hp, int attack, int defence)
+        public void Damage(int hp, int attack, int defence)
         {
             if (defence > attack)
             {
@@ -150,13 +162,13 @@ namespace MortalKombat.Models.Character.Base
                 Hp = hp - (attack - defence);
             }
         }
-        protected virtual void XRay(char button)
+        public virtual void XRay(char button)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have X-Ray!");
             Console.ResetColor();
         }
-        protected virtual void Fatality(string combination, char skin2)
+        public virtual void Fatality(string combination, char skin2)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have Fatality!");
