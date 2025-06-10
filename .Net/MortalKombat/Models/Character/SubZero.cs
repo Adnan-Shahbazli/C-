@@ -1,4 +1,5 @@
 namespace MortalKombat.Models.Character.Base
+
 {
     public class SubZero : Character
     {
@@ -23,13 +24,13 @@ namespace MortalKombat.Models.Character.Base
                 System.Console.Write(this.Skin);
                 Thread.Sleep(400);
                 Console.Clear();
-                System.Console.Write("");
                 Thread.Sleep(400);
             }
         }
 
         protected override void XRay(char button)
         {
+            Console.BackgroundColor = ConsoleColor.DarkRed;
             System.Console.Write($"{this.Skin}\t\t");
             Console.ForegroundColor = ConsoleColor.Blue;
             System.Console.WriteLine("--------------------------->");
@@ -38,6 +39,9 @@ namespace MortalKombat.Models.Character.Base
         }
         protected override void Fatality(string combination, char skin2)
         {
+            if (combination == this.FatalityCombination)
+            System.Console.WriteLine("Fatality");
+            Thread.Sleep(400);
             System.Console.Write(this.Skin);
             Console.ForegroundColor = ConsoleColor.Blue;
             System.Console.WriteLine("\t\t\t\t[");

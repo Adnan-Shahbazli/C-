@@ -1,3 +1,5 @@
+
+
 namespace MortalKombat.Models.Character.Base
 {
     public abstract class Character
