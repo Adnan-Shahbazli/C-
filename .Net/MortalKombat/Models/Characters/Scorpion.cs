@@ -38,16 +38,12 @@ namespace MortalKombat.Models.Characters.Base
             }
         }
 
-        public override void XRay(char button)
+        public override void XRay()
         {
-            if (button == this.XRayButton)
-            {
                 System.Console.Write($"{this.Skin}\t\t");
                 Console.BackgroundColor = ConsoleColor.DarkRed;
-                System.Console.WriteLine("--------------------------->");
+                System.Console.Write("--------------------------->");
                 Console.ResetColor();
-            }
-
         }
         public override void Fatality(string combination, char skin2)
         {
@@ -75,7 +71,7 @@ namespace MortalKombat.Models.Characters.Base
             }
         }
 
-        public void Show()
+        public override void Show()
         {
             System.Console.WriteLine("Name:  Scorpion");
             System.Console.Write("Hp:      ");

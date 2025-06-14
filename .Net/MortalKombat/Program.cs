@@ -2,4 +2,4 @@
 
 Gameplay gameplay = new Gameplay();
 
-gameplay.choice();
+gameplay.menu();

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MortalKombat")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0775b0e9a02032524702984005d5b981a5e316be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e1cf2a6136f9d28215168f3116548e9125f8844")]
 [assembly: System.Reflection.AssemblyProductAttribute("MortalKombat")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MortalKombat")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

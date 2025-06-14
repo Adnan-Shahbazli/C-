@@ -116,6 +116,25 @@ namespace MortalKombat.Models.Characters.Base
                 fatalityCombination = value;
             }
         }
+        public virtual void ShowXRayAttack()
+        {
+            if (XRayPercent == 0)
+            {
+                System.Console.WriteLine("\t\t\t░|░|░");
+            }
+            else if (XRayPercent == 1)
+            {
+                System.Console.WriteLine("\t\t\t▓|▒|░");
+            }
+            else if (XRayPercent == 2)
+            {
+                System.Console.WriteLine("\t\t\t▓|▓|▒");
+            }
+            else if (XRayPercent == 3)
+            {
+                System.Console.WriteLine("\t\t\t▓|▓|▓");
+            }
+        }
         public virtual void CharacterAttackLeft()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -146,7 +165,7 @@ namespace MortalKombat.Models.Characters.Base
             System.Console.WriteLine("You don't have Damage");
             Console.ResetColor();
         }
-        public void Damage(int hp, int attack, int defence)
+        public void Damage(Character Player1, Character Player2, int attack, int defence)
         {
             if (defence > attack)
             {
@@ -157,12 +176,19 @@ namespace MortalKombat.Models.Characters.Base
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                System.Console.WriteLine($"You lose -{hp - (attack - defence)} hp");
                 Console.ResetColor();
-                Hp = hp - (attack - defence);
+                if (Player2.Hp - (attack - defence) < 0)
+                {
+                    Player2.Hp = 0;
+                }
+                else
+                {
+                    Player2.Hp -= attack - defence;
+                }
+                
             }
         }
-        public virtual void XRay(char button)
+        public virtual void XRay()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have X-Ray!");
@@ -173,6 +199,10 @@ namespace MortalKombat.Models.Characters.Base
             Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("You don't have Fatality!");
             Console.ResetColor();
+        }
+        public virtual void Show()
+        {
+            System.Console.WriteLine("This class don't have show method");
         }
     }
 }
