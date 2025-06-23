@@ -1,0 +1,15 @@
+C:\Users\User\Music\C#\.Net\IEnumerable\bin\Debug\net9.0\IEnumerable.exe
+C:\Users\User\Music\C#\.Net\IEnumerable\bin\Debug\net9.0\IEnumerable.deps.json
+C:\Users\User\Music\C#\.Net\IEnumerable\bin\Debug\net9.0\IEnumerable.runtimeconfig.json
+C:\Users\User\Music\C#\.Net\IEnumerable\bin\Debug\net9.0\IEnumerable.dll
+C:\Users\User\Music\C#\.Net\IEnumerable\bin\Debug\net9.0\IEnumerable.pdb
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.AssemblyInfoInputs.cache
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.AssemblyInfo.cs
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.csproj.CoreCompileInputs.cache
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.sourcelink.json
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.dll
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\refint\IEnumerable.dll
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.pdb
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\IEnumerable.genruntimeconfig.cache
+C:\Users\User\Music\C#\.Net\IEnumerable\obj\Debug\net9.0\ref\IEnumerable.dll
