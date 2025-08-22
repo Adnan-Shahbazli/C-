@@ -207,7 +207,7 @@ namespace MortalKombat.Models.Game
                     Thread.Sleep(5000);
                     Console.Clear();
                 }
-                else if (choiceAction == Convert.ToString(characters[Player1].XRayButton) && actionPlayer2 == "1" && characters[Player1].XRayPercent == 3)
+                else if (choiceAction.ToLower() == Convert.ToString(characters[Player1].XRayButton) && actionPlayer2 == "1" && characters[Player1].XRayPercent == 3)
                 {
                     characters[Player1].XRay();
                     characters[Player2].CharacterAttackRight();
@@ -217,7 +217,7 @@ namespace MortalKombat.Models.Game
                     Thread.Sleep(5000);
                     Console.Clear();
                 }
-                else if (choiceAction == Convert.ToString(characters[Player1].XRayButton) && actionPlayer2 == "2" && characters[Player1].XRayPercent == 3)
+                else if (choiceAction.ToLower() == Convert.ToString(characters[Player1].XRayButton) && actionPlayer2 == "2" && characters[Player1].XRayPercent == 3)
                 {
                     characters[Player1].XRay();
                     characters[Player2].CharacterDefenceRight();

@@ -175,6 +175,7 @@ namespace MortalKombat.Models.Characters.Base
             }
             else
             {
+                Player2.CharacterDamage();
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.ResetColor();
                 if (Player2.Hp - (attack - defence) < 0)
@@ -204,5 +205,6 @@ namespace MortalKombat.Models.Characters.Base
         {
             System.Console.WriteLine("This class don't have show method");
         }
+
     }
 }
