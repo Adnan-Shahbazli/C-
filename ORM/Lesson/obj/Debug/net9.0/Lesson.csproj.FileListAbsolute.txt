@@ -65,3 +65,15 @@ C:\Users\shakh\Music\C#\C-\ORM\Lesson\obj\Debug\net9.0\Lesson.pdb
 C:\Users\shakh\Music\C#\C-\ORM\Lesson\obj\Debug\net9.0\Lesson.genruntimeconfig.cache
 C:\Users\shakh\Music\C#\C-\ORM\Lesson\obj\Debug\net9.0\ref\Lesson.dll
 C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Dapper.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\dbup-core.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\dbup-sqlserver.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.Azure.Services.AppAuthentication.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Users\shakh\Music\C#\C-\ORM\Lesson\bin\Debug\net9.0\System.Formats.Asn1.dll
