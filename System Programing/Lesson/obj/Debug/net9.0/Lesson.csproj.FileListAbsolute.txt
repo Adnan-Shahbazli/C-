@@ -1,0 +1,15 @@
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.AssemblyInfoInputs.cache
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.AssemblyInfo.cs
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.csproj.CoreCompileInputs.cache
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.sourcelink.json
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\bin\Debug\net9.0\Lesson.exe
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\bin\Debug\net9.0\Lesson.deps.json
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\bin\Debug\net9.0\Lesson.runtimeconfig.json
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\bin\Debug\net9.0\Lesson.dll
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\bin\Debug\net9.0\Lesson.pdb
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.dll
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\refint\Lesson.dll
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.pdb
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\Lesson.genruntimeconfig.cache
+C:\Users\shakh\Music\C#\C-\System Programing\Lesson\obj\Debug\net9.0\ref\Lesson.dll
