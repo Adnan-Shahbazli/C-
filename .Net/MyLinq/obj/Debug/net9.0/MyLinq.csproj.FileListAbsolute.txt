@@ -1,0 +1,15 @@
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\bin\Debug\net9.0\MyLinq.exe
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\bin\Debug\net9.0\MyLinq.deps.json
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\bin\Debug\net9.0\MyLinq.runtimeconfig.json
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\bin\Debug\net9.0\MyLinq.dll
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\bin\Debug\net9.0\MyLinq.pdb
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.AssemblyInfoInputs.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.AssemblyInfo.cs
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.csproj.CoreCompileInputs.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.sourcelink.json
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.dll
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\refint\MyLinq.dll
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.pdb
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\MyLinq.genruntimeconfig.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\.Net\MyLinq\obj\Debug\net9.0\ref\MyLinq.dll

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IEnumerable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51179de484d65afa1114d38b220ee5b0114b536c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3d1723edf4d5d5307e8246b4bd6c39cb27da339")]
 [assembly: System.Reflection.AssemblyProductAttribute("IEnumerable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IEnumerable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
