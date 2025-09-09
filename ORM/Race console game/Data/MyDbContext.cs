@@ -8,6 +8,10 @@ namespace Race_console_game.Data
         private const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=DbRace;TrustServerCertificate=True;";
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<DriverCharacteristics> DriversCharacteristics { get; set; }
+        public DbSet<Calendar> Calendars { get; set; }
+        public DbSet<GameSave> GameSaves { get; set; }
+        public DbSet<Season> Seasons { get; set; }
+        public DbSet<Team> Teams { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
