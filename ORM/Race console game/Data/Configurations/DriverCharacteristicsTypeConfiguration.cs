@@ -56,12 +56,12 @@ namespace Race_console_game.Data.Configurations
             builder
                 .Property(dc => dc.Ex)
                 .IsRequired(true)
-                .HasDefaultValue(1); 
+                .HasDefaultValue(0); 
                 
             builder
                 .Property(dc => dc.Points)
                 .IsRequired(true)
-                .HasDefaultValue(1); 
+                .HasDefaultValue(0); 
         }
     }
 }

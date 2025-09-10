@@ -31,7 +31,7 @@ namespace Race_console_game.Data.Configurations
             builder
                 .Property(driver => driver.ShortName)
                 .IsRequired(true)
-                .HasColumnType("varchar(3)");
+                .HasColumnType("char(3)");
 
             builder
                 .Property(driver => driver.DriverNumber)
