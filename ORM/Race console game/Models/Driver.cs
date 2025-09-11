@@ -9,6 +9,6 @@ namespace Race_console_game.Models
         public required int DriverNumber { get; set; }
         public required int CharacteristicsId { get; set; }
         public required int Score { get; set; } = 0;
-        public required int GameSaveId { get; set; } = 0;
+        public int? GameSaveId { get; set; } = 0;
     }
 }

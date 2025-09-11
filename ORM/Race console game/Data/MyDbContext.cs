@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Race_console_game.Data.Configurations;
 using Race_console_game.Models;
 
 namespace Race_console_game.Data
@@ -18,6 +19,17 @@ namespace Race_console_game.Data
             base.OnConfiguring(optionsBuilder);
 
             optionsBuilder.UseSqlServer(connectionString);
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new CalendarTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DriverTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DriverCharacteristicsTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new GameSaveTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new SeasonTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new TeamTypeConfiguration());
         }
     }
 }

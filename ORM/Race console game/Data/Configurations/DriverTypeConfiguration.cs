@@ -53,7 +53,9 @@ namespace Race_console_game.Data.Configurations
                 .WithMany()
                 .HasForeignKey(driver => driver.GameSaveId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            builder
+                .Property(driver => driver.GameSaveId)
+                .IsRequired(false);
         }
     }
 }
