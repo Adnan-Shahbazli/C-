@@ -30,7 +30,7 @@ namespace Race_console_game.Models
                 foreach (var ch in line)
                 {
                     Console.Write(ch);
-                    //Thread.Sleep(1);
+                    Thread.Sleep(1);
                 }
                 Console.WriteLine();
             }
@@ -221,29 +221,29 @@ namespace Race_console_game.Models
 
                 INSERT INTO [Calendars] ([SeasonId], [WeekNumber], [IsReac], [RaceName])
                 VALUES
-                (@seasonId, 9, 0, 'Australian Grand Prix'),
-                (@seasonId, 10, 0, 'Chinese Grand Prix'),
-                (@seasonId, 14, 0, 'Japanese Grand Prix'),
-                (@seasonId, 16, 0, 'Bahrain Grand Prix'),
-                (@seasonId, 17, 0, 'Saudi Arabian Grand Prix'),
-                (@seasonId, 19, 0, 'Miami Grand Prix'),
-                (@seasonId, 21, 0, 'Monaco Grand Prix'),
-                (@seasonId, 23, 0, 'Canadian Grand Prix'),
-                (@seasonId, 25, 0, 'Spanish Grand Prix'),
-                (@seasonId, 26, 0, 'Austrian Grand Prix'),
-                (@seasonId, 28, 0, 'British Grand Prix'),
-                (@seasonId, 30, 0, 'Belgian Grand Prix'),
-                (@seasonId, 31, 0, 'Dutch Grand Prix'),
-                (@seasonId, 33, 0, 'Hungarian Grand Prix'),
-                (@seasonId, 35, 0, 'Italian Grand Prix'),
-                (@seasonId, 38, 0, 'Azerbaijan Grand Prix'),
-                (@seasonId, 39, 0, 'Singapore Grand Prix'),
-                (@seasonId, 41, 0, 'United States Grand Prix'),
-                (@seasonId, 43, 0, 'Mexico City Grand Prix'),
-                (@seasonId, 45, 0, 'São Paulo Grand Prix'),
-                (@seasonId, 47, 0, 'Las Vegas Grand Prix'),
-                (@seasonId, 49, 0, 'Qatar Grand Prix'),
-                (@seasonId, 50, 0, 'Abu Dhabi Grand Prix');
+                (@seasonId, 9, 1, 'Australian Grand Prix'),
+                (@seasonId, 10, 1, 'Chinese Grand Prix'),
+                (@seasonId, 14, 1, 'Japanese Grand Prix'),
+                (@seasonId, 16, 1, 'Bahrain Grand Prix'),
+                (@seasonId, 17, 1, 'Saudi Arabian Grand Prix'),
+                (@seasonId, 19, 1, 'Miami Grand Prix'),
+                (@seasonId, 21, 1, 'Monaco Grand Prix'),
+                (@seasonId, 23, 1, 'Canadian Grand Prix'),
+                (@seasonId, 25, 1, 'Spanish Grand Prix'),
+                (@seasonId, 26, 1, 'Austrian Grand Prix'),
+                (@seasonId, 28, 1, 'British Grand Prix'),
+                (@seasonId, 30, 1, 'Belgian Grand Prix'),
+                (@seasonId, 31, 1, 'Dutch Grand Prix'),
+                (@seasonId, 33, 1, 'Hungarian Grand Prix'),
+                (@seasonId, 35, 1, 'Italian Grand Prix'),
+                (@seasonId, 38, 1, 'Azerbaijan Grand Prix'),
+                (@seasonId, 39, 1, 'Singapore Grand Prix'),
+                (@seasonId, 41, 1, 'United States Grand Prix'),
+                (@seasonId, 43, 1, 'Mexico City Grand Prix'),
+                (@seasonId, 45, 1, 'São Paulo Grand Prix'),
+                (@seasonId, 47, 1, 'Las Vegas Grand Prix'),
+                (@seasonId, 49, 1, 'Qatar Grand Prix'),
+                (@seasonId, 50, 1, 'Abu Dhabi Grand Prix');
                 
                 INSERT INTO [GameSaves] ([WeekNow], [TeamId], [SeasonId])
                 VALUES (9, @ferrari_team_id, @seasonId);
@@ -524,7 +524,7 @@ namespace Race_console_game.Models
                     System.Console.WriteLine($"{driver.FirstName} {driver.LastName}\t\t{driver.DriverNumber}");
                     System.Console.WriteLine($"Rating\t\t\t{driverCharacteristic.Rating}");
                     System.Console.WriteLine($"Weak\t\t\tPoint");
-                    System.Console.WriteLine($"{gameSave.WeekNow}\t\t\t{driverCharacteristic.Ex}");
+                    System.Console.WriteLine($"{gameSave.WeekNow}\t\t\t{driverCharacteristic.Points}");
                     Console.SetCursorPosition(0, Console.CursorTop);
                 for (int i = 0; i < gameMenuItems.Length; i++)
                 {
@@ -695,7 +695,6 @@ namespace Race_console_game.Models
                 
                 driverCharacteristics.Points -= pointsToSpend;
 
-                // Recalculating the overall rating.
                 driverCharacteristics.Rating = (driverCharacteristics.QualifyingRating + 
                                                 driverCharacteristics.SpeedRating + 
                                                 driverCharacteristics.DefenseRating + 
