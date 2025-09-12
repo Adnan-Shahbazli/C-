@@ -9,7 +9,7 @@ namespace Race_console_game.Models
         private const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=DbRace;TrustServerCertificate=True;";
         private static readonly List<string> logo = new List<string>
 {
-    
+
     @"__        __   _                            ",
     @"\ \      / /__| | ___ ___  _ __ ___   ___  ",
     @" \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ ",
@@ -350,7 +350,7 @@ namespace Race_console_game.Models
 
             var selectedTeam = teams[selectedTeamIndex];
             Console.WriteLine($"A team has been selected.: {selectedTeam.Name}");
-            
+
             int seasonId = connection.ExecuteScalar<int>(@"
                 SELECT Id FROM Seasons ORDER BY Year DESC;
             ");
@@ -365,12 +365,12 @@ namespace Race_console_game.Models
                 VALUES (10, 10, 10, 10, 10, 10, 1, 0, 0); 
                 SELECT SCOPE_IDENTITY();
             ");
-            
+
             connection.Execute($@"
                 INSERT INTO Drivers (FirstName, LastName, ShortName, DriverNumber, CharacteristicsId, Score, GameSaveId) 
                 VALUES ('{firstName}', '{lastName}', '{shortName}', {driverNumber}, {userCharId}, 0, {newGameSaveId});
             ");
-            
+
             int userId = connection.ExecuteScalar<int>($@"SELECT TOP 1 Id FROM Drivers WHERE GameSaveId = {newGameSaveId} ORDER BY Id DESC;");
 
             // connection.Execute($@"
@@ -378,7 +378,7 @@ namespace Race_console_game.Models
             //     SET FirstNowDriverId = {userId} 
             //     WHERE Id = {selectedTeam.Id};
             // ");
-            
+
 
             Console.Clear();
             string message = "Thanks for creating the player. Have a nice game.<3";
@@ -483,59 +483,60 @@ namespace Race_console_game.Models
                     sql: "SELECT * FROM GameSaves WHERE Id = @SaveId;",
                     param: new { SaveId = saveId });
 
-                if (gameSave == null)
-                {
-                    Console.WriteLine("Error: The selected game save could not be found.");
-                    System.Threading.Thread.Sleep(2000);
-                    Menu();
-                    return;
-                }
+            if (gameSave == null)
+            {
+                Console.WriteLine("Error: The selected game save could not be found.");
+                System.Threading.Thread.Sleep(2000);
+                Menu();
+                return;
+            }
 
-                var driver = connection.QueryFirstOrDefault<Driver>(
-                    sql: "SELECT * FROM Drivers d WHERE d.GameSaveId = @GameSaveId;",
-                    param: new { GameSaveId = gameSave.Id });
+            var driver = connection.QueryFirstOrDefault<Driver>(
+                sql: "SELECT * FROM Drivers d WHERE d.GameSaveId = @GameSaveId;",
+                param: new { GameSaveId = gameSave.Id });
 
-                if (driver == null)
-                {
-                    Console.WriteLine("Error: Driver data for this save could not be found.");
-                    System.Threading.Thread.Sleep(2000);
-                    Menu();
-                    return;
-                }
+            if (driver == null)
+            {
+                Console.WriteLine("Error: Driver data for this save could not be found.");
+                System.Threading.Thread.Sleep(2000);
+                Menu();
+                return;
+            }
 
-                var driverCharacteristic = connection.QueryFirstOrDefault<DriverCharacteristics>(
-                    sql: "SELECT * FROM DriverCharacteristics WHERE Id = @CharacteristicsId;",
-                    param: new { CharacteristicsId = driver.CharacteristicsId });
+            var driverCharacteristic = connection.QueryFirstOrDefault<DriverCharacteristics>(
+                sql: "SELECT * FROM DriverCharacteristics WHERE Id = @CharacteristicsId;",
+                param: new { CharacteristicsId = driver.CharacteristicsId });
 
-                if (driverCharacteristic == null)
-                {
-                    Console.WriteLine("Error: Driver characteristics for this driver could not be found.");
-                    System.Threading.Thread.Sleep(2000);
-                    Menu();
-                    return;
-                }
+            if (driverCharacteristic == null)
+            {
+                Console.WriteLine("Error: Driver characteristics for this driver could not be found.");
+                System.Threading.Thread.Sleep(2000);
+                Menu();
+                return;
+            }
 
-                bool isRaceWeek = connection.ExecuteScalar<bool>(
-                    sql: "SELECT IsReac FROM Calendars WHERE SeasonId = @SeasonId AND WeekNumber = @WeekNow;",
-                    param: new { SeasonId = gameSave.SeasonId, WeekNow = gameSave.WeekNow });
+            bool isRaceWeek = connection.ExecuteScalar<bool>(
+                sql: "SELECT IsReac FROM Calendars WHERE SeasonId = @SeasonId AND WeekNumber = @WeekNow;",
+                param: new { SeasonId = gameSave.SeasonId, WeekNow = gameSave.WeekNow });
 
-            
 
-            string[] gameMenuItems = new string[3];
-                gameMenuItems[0] = isRaceWeek ? "Play race" : "Skip week";
-                gameMenuItems[1] = "Upgrade player";
-                gameMenuItems[2] = "Exit";
 
-                int selectedIndex = 0;
-                ConsoleKey key;
-                do
-                {
-                    Console.Clear();
-                    System.Console.WriteLine($"{driver.FirstName} {driver.LastName}\t\t{driver.DriverNumber}");
-                    System.Console.WriteLine($"Rating\t\t\t{driverCharacteristic.Rating}");
-                    System.Console.WriteLine($"Weak\t\t\tPoint");
-                    System.Console.WriteLine($"{gameSave.WeekNow}\t\t\t{driverCharacteristic.Points}");
-                    Console.SetCursorPosition(0, Console.CursorTop);
+            string[] gameMenuItems = new string[4];
+            gameMenuItems[0] = isRaceWeek ? "Play race" : "Skip week";
+            gameMenuItems[1] = "Upgrade player";
+            gameMenuItems[2] = "Show Leaderboard";
+            gameMenuItems[3] = "Exit";
+
+            int selectedIndex = 0;
+            ConsoleKey key;
+            do
+            {
+                Console.Clear();
+                System.Console.WriteLine($"{driver.FirstName} {driver.LastName}\t\t{driver.DriverNumber}");
+                System.Console.WriteLine($"Rating\t\t\t{driverCharacteristic.Rating}");
+                System.Console.WriteLine($"Weak\t\t\tPoint");
+                System.Console.WriteLine($"{gameSave.WeekNow}\t\t\t{driverCharacteristic.Points}");
+                Console.SetCursorPosition(0, Console.CursorTop);
                 for (int i = 0; i < gameMenuItems.Length; i++)
                 {
                     if (i == selectedIndex)
@@ -548,94 +549,202 @@ namespace Race_console_game.Models
                     {
                         Console.WriteLine($"  {gameMenuItems[i]}");
                     }
-                    }
-
-                    key = Console.ReadKey(true).Key;
-                    if (key == ConsoleKey.UpArrow)
-                    {
-                        selectedIndex = (selectedIndex - 1 + gameMenuItems.Length) % gameMenuItems.Length;
-                    }
-                    else if (key == ConsoleKey.DownArrow)
-                    {
-                        selectedIndex = (selectedIndex + 1) % gameMenuItems.Length;
-                    }
-                    Console.Clear();
-                    for (int i = 0; i < gameMenuItems.Length; i++)
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop + i);
-                        Console.Write(new string(' ', Console.WindowWidth));
-                    }
-                    
-                } while (key != ConsoleKey.Enter);
-                
-                switch (selectedIndex)
-                {
-                    case 0:
-                        if (isRaceWeek)
-                        {
-                            PlayRace(saveId);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Skipping week...");
-                            int newEx = driverCharacteristic.Ex + 10;
-                            int newLevel = driverCharacteristic.Level;
-                            int newPoints = driverCharacteristic.Points;
-
-                            if (newEx >= newLevel * 10)
-                            {
-                                newLevel++;
-                                newPoints++;
-                                newEx = 0;
-                                Console.WriteLine("Level up! You gained a skill point!");
-                            }
-                            connection.Execute(
-                                sql: "UPDATE DriverCharacteristics SET Ex = @Ex, Level = @Level, Points = @Points WHERE Id = @Id;",
-                                param: new { Id = driverCharacteristic.Id, Ex = newEx, Level = newLevel, Points = newPoints });
-
-                            connection.Execute(
-                                sql: "UPDATE GameSaves SET WeekNow = WeekNow + 1 WHERE Id = @Id;",
-                                param: new { Id = gameSave.Id });
-
-                            Thread.Sleep(1000);
-                            Games(saveId);
-                        }
-                        break;
-                    case 1:
-                        UpgradePlayer(saveId);
-                        break;
-                    case 2:
-                        Menu();
-                        return;   
                 }
-            }
-        
 
-            private void PlayRace(int saveId)
+                key = Console.ReadKey(true).Key;
+                if (key == ConsoleKey.UpArrow)
+                {
+                    selectedIndex = (selectedIndex - 1 + gameMenuItems.Length) % gameMenuItems.Length;
+                }
+                else if (key == ConsoleKey.DownArrow)
+                {
+                    selectedIndex = (selectedIndex + 1) % gameMenuItems.Length;
+                }
+                Console.Clear();
+                for (int i = 0; i < gameMenuItems.Length; i++)
+                {
+                    Console.SetCursorPosition(0, Console.CursorTop + i);
+                    Console.Write(new string(' ', Console.WindowWidth));
+                }
+
+            } while (key != ConsoleKey.Enter);
+
+            switch (selectedIndex)
+            {
+                case 0:
+                    if (isRaceWeek)
+                    {
+                        PlayRace(saveId);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Skipping week...");
+                        int newEx = driverCharacteristic.Ex + 10;
+                        int newLevel = driverCharacteristic.Level;
+                        int newPoints = driverCharacteristic.Points;
+
+                        if (newEx >= newLevel * 10)
+                        {
+                            newLevel++;
+                            newPoints++;
+                            newEx = 0;
+                            Console.WriteLine("Level up! You gained a skill point!");
+                        }
+                        connection.Execute(
+                            sql: "UPDATE DriverCharacteristics SET Ex = @Ex, Level = @Level, Points = @Points WHERE Id = @Id;",
+                            param: new { Id = driverCharacteristic.Id, Ex = newEx, Level = newLevel, Points = newPoints });
+
+                        connection.Execute(
+                            sql: "UPDATE GameSaves SET WeekNow = WeekNow + 1 WHERE Id = @Id;",
+                            param: new { Id = gameSave.Id });
+
+                        Thread.Sleep(1000);
+                        Games(saveId);
+                    }
+                    break;
+                case 1:
+                    UpgradePlayer(saveId);
+                    break;
+                case 2:
+                    ShowLeaderboard(saveId);
+                    break;
+                case 3:
+                    Menu();
+                    return;
+            }
+        }
+
+        private void PlayRace(int saveId)
+        {
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            var drivers = connection.Query<dynamic>(@"
+                    SELECT d.*, dc.* FROM Drivers d
+                    JOIN DriverCharacteristics dc ON d.CharacteristicsId = dc.Id
+                ").ToList();
+
+            var raceOrder = drivers.OrderByDescending(d => d.QualifyingRating).ToList();
+            var crashedDrivers = new List<dynamic>();
+
+            var random = new Random();
+
+            for (int i = 0; i < 99; i++)
             {
                 Console.Clear();
-                Console.WriteLine("This is a race week! The race simulation logic would go here.");
-                System.Threading.Thread.Sleep(2000);
-                
-                using var connection = new SqlConnection(connectionString);
-                connection.Open();
-                connection.Execute(
-                    sql: "UPDATE GameSaves SET WeekNow = WeekNow + 1 WHERE Id = @Id;",
-                    param: new { Id = saveId });
+                Console.WriteLine($"\nRace Simulation - Lap {i + 1} of 99\n");
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine("| Pos | Driver Name          | Status                       |");
+                Console.WriteLine("----------------------------------------------------------------");
+
+                for (int p = 0; p < 20 && p < raceOrder.Count; p++)
+                {
+                    Console.WriteLine($"| {p + 1,3} | {raceOrder[p].FirstName + " " + raceOrder[p].LastName,-20} | In Race                      |");
+                }
+
+                foreach (var crashed in crashedDrivers)
+                {
+                    int crashPosition = raceOrder.Count + crashedDrivers.IndexOf(crashed) + 1;
+                    if (crashPosition <= 20)
+                    {
+                        Console.WriteLine($"| {crashPosition,3} | {crashed.FirstName + " " + crashed.LastName,-20} | Crashed                      |");
+                    }
+                }
+
+                Console.WriteLine("----------------------------------------------------------------");
+                Thread.Sleep(100);
+
+                // Уменьшенный шанс вылета из-за ConcentrationRating
+                for (int j = raceOrder.Count - 1; j >= 0; j--)
+                {
+                    var currentDriver = raceOrder[j];
+                    int crashChance = 100 - currentDriver.ConcentrationRating;
+                    if (random.Next(1, 10001) <= crashChance)
+                    {
+                        crashedDrivers.Add(currentDriver);
+                        raceOrder.RemoveAt(j);
+                    }
+                }
+
+                // Симуляция обгонов
+                for (int j = 0; j < raceOrder.Count - 1; j++)
+                {
+                    var overtakingDriver = raceOrder[j + 1];
+                    var defendingDriver = raceOrder[j];
+
+                    int overtakeChance = overtakingDriver.OvertakingRating;
+                    int defenseChance = defendingDriver.DefenseRating;
+
+                    if (overtakeChance > defenseChance)
+                    {
+                        if (random.Next(1, 101) <= overtakeChance)
+                        {
+                            if (random.Next(1, 101) > defenseChance)
+                            {
+                                var temp = raceOrder[j];
+                                raceOrder[j] = raceOrder[j + 1];
+                                raceOrder[j + 1] = temp;
+                            }
+                        }
+                    }
+                }
             }
 
-            private void UpgradePlayer(int saveId)
+            // Добавление выбывших гонщиков в конец списка
+            raceOrder.AddRange(crashedDrivers.OrderByDescending(d => d.Id));
+
+            // Определение очков и обновление базы данных
+            int[] pointsSystem = { 24, 18, 15, 12, 10, 8, 6, 4, 2, 1 };
+
+            for (int i = 0; i < raceOrder.Count; i++)
             {
-                using var connection = new SqlConnection(connectionString);
+                var driver = raceOrder[i];
+                int points = i < pointsSystem.Length ? pointsSystem[i] : 0;
+
+                connection.Execute(
+                    sql: "UPDATE Drivers SET Score = Score + @Points WHERE Id = @Id;",
+                    param: new { Points = points, Id = driver.CharacteristicsId });
+            }
+
+            // Вывод финальных результатов
+            Console.Clear();
+            Console.WriteLine("\nRace Finished! Final Standings:");
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("| Pos | Driver Name          | Points Gained |");
+            Console.WriteLine("------------------------------------------------");
+
+            for (int i = 0; i < 10 && i < raceOrder.Count; i++)
+            {
+                var driver = raceOrder[i];
+                int points = i < pointsSystem.Length ? pointsSystem[i] : 0;
+                Console.WriteLine($"| {i + 1,3} | {driver.FirstName + " " + driver.LastName,-20} | {points,13} |");
+            }
+            Console.WriteLine("------------------------------------------------");
+
+            // Обновление текущей недели в сохранении
+            connection.Execute(
+                sql: "UPDATE GameSaves SET WeekNow = WeekNow + 1 WHERE Id = @Id;",
+                param: new { Id = saveId });
+
+            Console.WriteLine("\nPress ENTER to continue...");
+            Console.ReadLine();
+
+            Games(saveId);
+        }
+
+        private void UpgradePlayer(int saveId)
+        {
+            using var connection = new SqlConnection(connectionString);
             connection.Open();
-            
+
             var gameSave = connection.QueryFirstOrDefault<GameSave>("SELECT * FROM GameSaves WHERE Id = @Id", new { Id = saveId });
             if (gameSave == null) return;
 
             var team = connection.QueryFirstOrDefault<Team>("SELECT * FROM Teams WHERE Id = @Id", new { Id = gameSave.TeamId });
             if (team == null) return;
 
-            var driver = connection.QueryFirstOrDefault<Driver>("SELECT * FROM Drivers WHERE Id = @Id", new { Id = team.FirstNowDriverId });
+            //var driver = connection.QueryFirstOrDefault<Driver>("SELECT * FROM Drivers WHERE Id = @Id", new { Id = team.FirstNowDriverId });
+            var driver = connection.QueryFirstOrDefault<Driver>("SELECT * FROM Drivers d WHERE d.GameSaveId = @GameSaveId;", new { GameSaveId = gameSave.Id });
             if (driver == null) return;
 
             var driverCharacteristics = connection.QueryFirstOrDefault<DriverCharacteristics>("SELECT * FROM DriverCharacteristics WHERE Id = @Id", new { Id = driver.CharacteristicsId });
@@ -683,7 +792,7 @@ namespace Race_console_game.Models
                     System.Threading.Thread.Sleep(2000);
                     continue;
                 }
-                
+
                 switch (option)
                 {
                     case 1:
@@ -702,15 +811,15 @@ namespace Race_console_game.Models
                         driverCharacteristics.ConcentrationRating += pointsToSpend;
                         break;
                 }
-                
+
                 driverCharacteristics.Points -= pointsToSpend;
 
-                driverCharacteristics.Rating = (driverCharacteristics.QualifyingRating + 
-                                                driverCharacteristics.SpeedRating + 
-                                                driverCharacteristics.DefenseRating + 
-                                                driverCharacteristics.OvertakingRating + 
+                driverCharacteristics.Rating = (driverCharacteristics.QualifyingRating +
+                                                driverCharacteristics.SpeedRating +
+                                                driverCharacteristics.DefenseRating +
+                                                driverCharacteristics.OvertakingRating +
                                                 driverCharacteristics.ConcentrationRating) / 5;
-                
+
                 try
                 {
                     string sql = @"UPDATE DriverCharacteristics SET
@@ -729,12 +838,41 @@ namespace Race_console_game.Models
                 {
                     Console.WriteLine($"An error occurred during saving: {ex.Message}");
                 }
-                
+
                 System.Threading.Thread.Sleep(2000);
                 Games(saveId);
             }
-                
-            }
+
+        }
         
+        private void ShowLeaderboard(int saveId)
+{
+    using var connection = new SqlConnection(connectionString);
+    connection.Open();
+
+    var leaderboard = connection.Query<dynamic>(@"
+        SELECT d.*, t.Name AS TeamName
+        FROM Drivers d
+        JOIN GameSaves gs ON d.GameSaveId = gs.Id
+        JOIN Teams t ON gs.TeamId = t.Id
+        WHERE d.GameSaveId = @GameSaveId
+        ORDER BY d.Score DESC;
+    ", new { GameSaveId = saveId }).ToList();
+
+    Console.Clear();
+    Console.WriteLine("\nLeaderboard:");
+    Console.WriteLine("------------------------------------------------------------------");
+    Console.WriteLine("| Pos | Driver Name         | Team                | Score      |");
+    Console.WriteLine("------------------------------------------------------------------");
+    
+    for (int i = 0; i < leaderboard.Count; i++)
+    {
+        Console.WriteLine($"| {i + 1,3} | {leaderboard[i].FirstName + " " + leaderboard[i].LastName,-19} | {leaderboard[i].TeamName,-19} | {leaderboard[i].Score,10} |");
+    }
+
+    Console.WriteLine("------------------------------------------------------------------");
+    Console.WriteLine("\nPress ENTER to continue...");
+    Console.ReadLine();
+}
     }
 }
