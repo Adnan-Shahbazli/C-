@@ -246,9 +246,6 @@ namespace Race_console_game.Models
                 (@seasonId, 47, 1, 'Las Vegas Grand Prix'),
                 (@seasonId, 49, 1, 'Qatar Grand Prix'),
                 (@seasonId, 50, 1, 'Abu Dhabi Grand Prix');
-                
-                INSERT INTO [GameSaves] ([WeekNow], [TeamId], [SeasonId])
-                VALUES (9, @ferrari_team_id, @seasonId);
             ");
 
             Console.Clear();
@@ -374,9 +371,7 @@ namespace Race_console_game.Models
                 VALUES ('{firstName}', '{lastName}', '{shortName}', {driverNumber}, {userCharId}, 0, {newGameSaveId});
             ");
             
-            int userId = connection.ExecuteScalar<int>($@"
-                SELECT TOP 1 Id FROM Drivers WHERE GameSaveId = {newGameSaveId};
-            ");
+            int userId = connection.ExecuteScalar<int>($@"SELECT TOP 1 Id FROM Drivers WHERE GameSaveId = {newGameSaveId} ORDER BY Id DESC;");
 
             connection.Execute($@"
                 UPDATE Teams 
