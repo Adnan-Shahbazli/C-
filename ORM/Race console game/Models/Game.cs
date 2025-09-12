@@ -373,11 +373,11 @@ namespace Race_console_game.Models
             
             int userId = connection.ExecuteScalar<int>($@"SELECT TOP 1 Id FROM Drivers WHERE GameSaveId = {newGameSaveId} ORDER BY Id DESC;");
 
-            connection.Execute($@"
-                UPDATE Teams 
-                SET FirstNowDriverId = {userId} 
-                WHERE Id = {selectedTeam.Id};
-            ");
+            // connection.Execute($@"
+            //     UPDATE Teams 
+            //     SET FirstNowDriverId = {userId} 
+            //     WHERE Id = {selectedTeam.Id};
+            // ");
             
 
             Console.Clear();
@@ -404,6 +404,18 @@ namespace Race_console_game.Models
             using var connection = new SqlConnection(connectionString);
             connection.Open();
 
+            // var savedGames = connection.Query<dynamic>(@"
+            //     SELECT 
+            //         gs.Id,
+            //         gs.WeekNow,
+            //         t.Name as TeamName,
+            //         d.FirstName + ' ' + d.LastName as DriverName
+            //     FROM GameSaves gs
+            //     JOIN Teams t ON gs.TeamId = t.Id
+            //     JOIN Drivers d ON t.FirstNowDriverId = d.Id
+            //     ORDER BY gs.Id DESC;
+            // ").ToList();
+
             var savedGames = connection.Query<dynamic>(@"
                 SELECT 
                     gs.Id,
@@ -412,9 +424,10 @@ namespace Race_console_game.Models
                     d.FirstName + ' ' + d.LastName as DriverName
                 FROM GameSaves gs
                 JOIN Teams t ON gs.TeamId = t.Id
-                JOIN Drivers d ON t.FirstNowDriverId = d.Id
+                JOIN Drivers d ON d.GameSaveId = gs.Id
                 ORDER BY gs.Id DESC;
             ").ToList();
+
 
             if (!savedGames.Any())
             {

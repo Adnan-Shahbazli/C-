@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Race console game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1174e8b63479c4d5b950d2bacad4082284498bf9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb61b8821aab84f21c1dd942bed3eb5da793d3ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("Race console game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Race console game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
