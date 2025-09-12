@@ -9,6 +9,7 @@ namespace Race_console_game.Models
         private const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=DbRace;TrustServerCertificate=True;";
         private static readonly List<string> logo = new List<string>
 {
+    
     @"__        __   _                            ",
     @"\ \      / /__| | ___ ___  _ __ ___   ___  ",
     @" \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ ",
@@ -25,6 +26,7 @@ namespace Race_console_game.Models
 
         public void Menu()
         {
+            Console.Clear();
             foreach (var line in logo)
             {
                 foreach (var ch in line)
