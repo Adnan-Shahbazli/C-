@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "I+WoD9wx/dc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\shakh\\Music\\C#\\C-\\Network Programing\\FTP\\FTP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shakh\\.nuget\\packages\\fluentftp\\53.0.1\\fluentftp.53.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
