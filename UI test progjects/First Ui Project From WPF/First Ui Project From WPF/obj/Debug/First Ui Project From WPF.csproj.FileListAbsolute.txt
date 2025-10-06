@@ -1,0 +1,16 @@
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.csproj.AssemblyReference.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\App.g.cs
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF_MarkupCompile.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\bin\Debug\First Ui Project From WPF.exe.config
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\bin\Debug\First Ui Project From WPF.exe
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\bin\Debug\First Ui Project From WPF.pdb
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF_MarkupCompile.lref
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\MainWindow.baml
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.g.resources
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First_Ui_Project_From_WPF.Properties.Resources.resources
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.csproj.GenerateResource.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.csproj.CoreCompileInputs.cache
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.exe
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.pdb
+C:\Users\Аднан Шахбазлы\Music\C#\C-\UI test progjects\First Ui Project From WPF\First Ui Project From WPF\obj\Debug\First Ui Project From WPF.exe.config

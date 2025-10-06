@@ -298,19 +298,13 @@ namespace Race_console_game.Models
             }
 
             var teams = connection.Query<dynamic>(@"
-                SELECT 
-                    T.Id,
-                    T.Name,
-                    (DC1.Rating + DC2.Rating) / 2 AS AverageRating
-                FROM Teams AS T
-                JOIN Drivers AS D1 ON T.FirstDefaultDriverId = D1.Id
-                JOIN DriverCharacteristics AS DC1 ON D1.CharacteristicsId = DC1.Id
-                JOIN Drivers AS D2 ON T.SeconDefaultdDriverId = D2.Id
-                JOIN DriverCharacteristics AS DC2 ON D2.CharacteristicsId = DC2.Id
-                ORDER BY AverageRating ASC
-                OFFSET 0 ROWS
-                FETCH NEXT 3 ROWS ONLY;
-            ").ToList();
+    SELECT 
+        T.Id,
+        T.Name
+    FROM Teams AS T
+    WHERE T.Name IN ('Visa Cash App RB', 'Haas', 'Sauber');
+").ToList();
+
 
             Console.Clear();
             foreach (var item in logo)
@@ -373,13 +367,6 @@ namespace Race_console_game.Models
 
             int userId = connection.ExecuteScalar<int>($@"SELECT TOP 1 Id FROM Drivers WHERE GameSaveId = {newGameSaveId} ORDER BY Id DESC;");
 
-            // connection.Execute($@"
-            //     UPDATE Teams 
-            //     SET FirstNowDriverId = {userId} 
-            //     WHERE Id = {selectedTeam.Id};
-            // ");
-
-
             Console.Clear();
             string message = "Thanks for creating the player. Have a nice game.<3";
             foreach (char c in message)
@@ -403,18 +390,6 @@ namespace Race_console_game.Models
 
             using var connection = new SqlConnection(connectionString);
             connection.Open();
-
-            // var savedGames = connection.Query<dynamic>(@"
-            //     SELECT 
-            //         gs.Id,
-            //         gs.WeekNow,
-            //         t.Name as TeamName,
-            //         d.FirstName + ' ' + d.LastName as DriverName
-            //     FROM GameSaves gs
-            //     JOIN Teams t ON gs.TeamId = t.Id
-            //     JOIN Drivers d ON t.FirstNowDriverId = d.Id
-            //     ORDER BY gs.Id DESC;
-            // ").ToList();
 
             var savedGames = connection.Query<dynamic>(@"
                 SELECT 
@@ -654,7 +629,6 @@ namespace Race_console_game.Models
                 Console.WriteLine("----------------------------------------------------------------");
                 Thread.Sleep(100);
 
-                // Уменьшенный шанс вылета из-за ConcentrationRating
                 for (int j = raceOrder.Count - 1; j >= 0; j--)
                 {
                     var currentDriver = raceOrder[j];
@@ -666,7 +640,6 @@ namespace Race_console_game.Models
                     }
                 }
 
-                // Симуляция обгонов
                 for (int j = 0; j < raceOrder.Count - 1; j++)
                 {
                     var overtakingDriver = raceOrder[j + 1];
@@ -690,10 +663,8 @@ namespace Race_console_game.Models
                 }
             }
 
-            // Добавление выбывших гонщиков в конец списка
             raceOrder.AddRange(crashedDrivers.OrderByDescending(d => d.Id));
 
-            // Определение очков и обновление базы данных
             int[] pointsSystem = { 24, 18, 15, 12, 10, 8, 6, 4, 2, 1 };
 
             for (int i = 0; i < raceOrder.Count; i++)
@@ -706,7 +677,6 @@ namespace Race_console_game.Models
                     param: new { Points = points, Id = driver.CharacteristicsId });
             }
 
-            // Вывод финальных результатов
             Console.Clear();
             Console.WriteLine("\nRace Finished! Final Standings:");
             Console.WriteLine("------------------------------------------------");
@@ -721,7 +691,6 @@ namespace Race_console_game.Models
             }
             Console.WriteLine("------------------------------------------------");
 
-            // Обновление текущей недели в сохранении
             connection.Execute(
                 sql: "UPDATE GameSaves SET WeekNow = WeekNow + 1 WHERE Id = @Id;",
                 param: new { Id = saveId });
@@ -743,7 +712,6 @@ namespace Race_console_game.Models
             var team = connection.QueryFirstOrDefault<Team>("SELECT * FROM Teams WHERE Id = @Id", new { Id = gameSave.TeamId });
             if (team == null) return;
 
-            //var driver = connection.QueryFirstOrDefault<Driver>("SELECT * FROM Drivers WHERE Id = @Id", new { Id = team.FirstNowDriverId });
             var driver = connection.QueryFirstOrDefault<Driver>("SELECT * FROM Drivers d WHERE d.GameSaveId = @GameSaveId;", new { GameSaveId = gameSave.Id });
             if (driver == null) return;
 

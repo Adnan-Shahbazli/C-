@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "First Ui Project From WPF", "First Ui Project From WPF\First Ui Project From WPF.csproj", "{518A4B7D-C1F1-4D0D-9155-552A2C593FF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{518A4B7D-C1F1-4D0D-9155-552A2C593FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518A4B7D-C1F1-4D0D-9155-552A2C593FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518A4B7D-C1F1-4D0D-9155-552A2C593FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518A4B7D-C1F1-4D0D-9155-552A2C593FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC4171D5-9E6C-49CC-9A50-04A09AA4289C}
+	EndGlobalSection
+EndGlobal
